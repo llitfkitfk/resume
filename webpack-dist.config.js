@@ -54,12 +54,12 @@ module.exports = {
     new OptimizeCSSAssetsPlugin(),
     new EndWebpackPlugin(async () => {
       // 自定义域名
-      fs.writeFileSync(path.resolve(outputPath, 'CNAME'), 'resume.gotkit.info');
+      fs.writeFileSync(path.resolve(outputPath, 'CNAME'), 'resume.gokit.info');
 
       // 调用 Chrome 渲染出 PDF 文件
       const chromePath = findChrome();
       spawnSync(chromePath, ['--headless', '--disable-gpu', `--print-to-pdf=${path.resolve(outputPath, 'resume.pdf')}`,
-        'http://resume.gotkit.info' // 这里注意改成你的在线简历的网站
+        'http://resume.gokit.info' // 这里注意改成你的在线简历的网站
       ]);
     }),
   ]
