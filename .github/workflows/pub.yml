@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v1
       - name: Build
         run: |
-          npm ci
-          npm run build
+          yarn ci
+          yarn run build
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
